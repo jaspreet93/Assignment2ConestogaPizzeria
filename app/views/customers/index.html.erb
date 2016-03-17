@@ -11,6 +11,15 @@
   </thead>
 
   <tbody>
+    <% if customer_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_customer_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_customer_session_path)  %>  
+  </li>
+<% end %>
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.NAME %></td>

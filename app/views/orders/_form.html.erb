@@ -1,0 +1,81 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Appartment %><br>
+    <%= f.text_field :Appartment %>
+  </div>
+  <div class="field">
+    <%= f.label :Street %><br>
+    <%= f.text_field :Street %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br>
+    <%= f.text_field :City %>
+  </div>
+  <div class="field">
+    <%= f.label :PostalCode %><br>
+    <%= f.text_field :PostalCode %>
+  </div>
+  <div class="field">
+    <%= f.label :Province %><br>
+    <%= f.text_field :Province %>
+  </div>
+  <div class="field">
+    <%= f.label :Size %><br>
+    <%= f.text_field :Size %>
+  </div>
+  <div class="field">
+    <%= f.label :VeggieToppings %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Green_Peppers %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Mushrooms %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Onions %><br>
+   <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Hotpeppers %><br>
+
+  </div>
+  <div class="field">
+     <%= f.label :NonVeggieToppings %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Pepproni %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Mushrooms %><br>
+     <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Onions %><br>
+   <input name="order[validated]" type="hidden" value="0" />
+   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
+   <%= f.label :Hotpeppers %><br
+
+  </div>
+  <div class="field">
+    <%= f.label :Crust %><br>
+    <%= f.text_field :Crust %>
+  </div>
+  <div class="field">
+    <%= f.label :Price %><br>
+    <%= f.text_field :Price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

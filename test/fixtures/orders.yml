@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Appartment: MyString
+  Street: MyString
+  City: MyString
+  PostalCode: MyString
+  Province: MyString
+  Size: MyString
+  VegToppings: MyString
+  NonVegToppings: MyString
+  Crust: MyString
+  Price: 1.5
+
+two:
+  Appartment: MyString
+  Street: MyString
+  City: MyString
+  PostalCode: MyString
+  Province: MyString
+  Size: MyString
+  VegToppings: MyString
+  NonVegToppings: MyString
+  Crust: MyString
+  Price: 1.5

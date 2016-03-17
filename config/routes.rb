@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   devise_for :customers
   resources :customers
   # The priority is based upon order of creation: first created -> highest priority.

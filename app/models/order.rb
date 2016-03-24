@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+    
    before_save do
         self.VegToppings.gsub!(/[\[\]\"]/,"") if attribute_present?("VegToppings")
         self.NonVegToppings.gsub!(/[\[\]\"]/,"") if attribute_present?("NonVegToppings")
@@ -7,7 +8,13 @@ class Order < ActiveRecord::Base
 
   canadian_postal_code = /\A[a-zA-Z]\d{1}[a-zA-Z](\-| |)\d{1}[a-zA-Z]\d{1}\z/
   validates :PostalCode, format: { with: canadian_postal_code }
-
+  validates :Appartment, presence:true
+  validates :Street, presence:true
+  validates :City, presence:true
+  validates :Size, presence:true
+  validates :Crust, presence:true
+  
+  
 
   
       def Price

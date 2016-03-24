@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
- 
-
-<h1>Listing Customers</h1>
-
+ <div class="container">
+				<div class="col-md-16">
+                  <div class="panel panel-primary">
+                    <div class="panel panel-heading">
+                      <span class="glyphicon glyphicon-user"></span> Listing Customers
+					  </div>
 <table>
   <thead>
     <tr>
@@ -15,9 +17,9 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.NAME %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', customer , :class=>'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) ,:class=>'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' },:class=>'btn btn-primary' %></td>
       </tr>
     <% end %>
   </tbody>

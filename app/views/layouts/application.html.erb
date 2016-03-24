@@ -12,13 +12,17 @@
 			   <h3>WELCOME TO CONESTOGA PIZZERIA</h3>
 				</div>
 				    <div class ="container"></div>
-					<nav class="navbar navbar-default">
-                        	<div class="navbar-header">
-								<ul class="nav navbar-nav">
+				      	<nav class="navbar navbar-default">
+                	<div class="navbar-header">
+							    	<ul class="nav navbar-nav">
 									<li class="active"><%= link_to 'Home', customers_path %></li>
-									
-									<li><%= link_to 'Orders', orders_path %></li>
-									<% if customer_signed_in? %>
+										<li><%= link_to 'Orders', orders_path %></li>
+									    <% if customer_signed_in? %>
+  									<% if current_customer.admin? %>
+  									<li>
+  									  <%= link_to 'Show All Orders', orders_path  %>   
+  									 </li>
+  									<% end %>
                     <li>
                     <%= link_to('Logout', destroy_customer_session_path, :method => :delete) %>        
                     </li>
@@ -36,3 +40,4 @@
 </div>
 </body>
 </html>
+ 

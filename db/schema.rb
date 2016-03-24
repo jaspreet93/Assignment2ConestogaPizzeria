@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317202259) do
+ActiveRecord::Schema.define(version: 20160320222118) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "NAME",                   limit: 255
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160317202259) do
     t.float    "Price",          limit: 24
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "customerId",     limit: 255
   end
 
 end

@@ -1,10 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#yield 
+#container
 {
-    border: 1px solid black;
-    border-radius:5px;
+    width:500x;
+    margin : 0px auto;
+    padding : 5px;
+    height: 600x;
     
 }
 #wrapper{

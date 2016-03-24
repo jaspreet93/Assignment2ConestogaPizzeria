@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
+ <div class="container">
+				<div class="col-md-16">
+                  <div class="panel panel-primary">
+                    <div class="panel panel-heading">
+                      <span class="glyphicon glyphicon-search"></span> Listing Orders
+					  </div>
 
-<h1>Listing My Orders</h1>
 
 <table>
   <thead>
@@ -20,26 +25,33 @@
   </thead>
 
   <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.Appartment %></td>
-        <td><%= order.Street %></td>
-        <td><%= order.City %></td>
-        <td><%= order.PostalCode %></td>
-        <td><%= order.Province %></td>
-        <td><%= order.Size %></td>
-        <td><%= order.VegToppings %></td>
-        <td><%= order.NonVegToppings %></td>
-        <td><%= order.Crust %></td>
-        <td><%= order.Price %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.Appartment %></td>
+          <td><%= order.Street %></td>
+          <td><%= order.City %></td>
+          <td><%= order.PostalCode %></td>
+          <td><%= order.Province %></td>
+          <td><%= order.Size %></td>
+          <td><%= order.VegToppings %></td>
+          <td><%= order.NonVegToppings %></td>
+          <td><%= order.Crust %></td>
+          <td><%= order.Price %></td>
+          
+          
+        
+          <td><%= link_to 'Show', order ,:class =>'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_order_path(order) ,:class =>'btn btn-primary' %></td>
+          <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn btn-primary' %></td>
+        </tr>
+      <% end %>
+    
+    
+    
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path ,:class =>'btn btn-primary'%>

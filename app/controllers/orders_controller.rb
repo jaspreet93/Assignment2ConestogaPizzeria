@@ -1,10 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_customer!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
+   # orders_id = Order.find(params[:id])
+  #  @orders_id = orders_id.select!{ |s| s.customer_id = current_customer.id } unless admin?
   end
 
   # GET /orders/1
@@ -69,6 +72,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:Appartment, :Street, :City, :PostalCode, :Province, :Size, :VegToppings, :NonVegToppings, :Crust, :Price)
+      params.require(:order).permit(:Appartment, :Street, :City, :PostalCode, :Province, :Size, :Crust, :Price, VegToppings:[] , NonVegToppings:[])
     end
 end

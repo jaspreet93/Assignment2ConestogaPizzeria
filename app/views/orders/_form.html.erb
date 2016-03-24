@@ -1,4 +1,3 @@
-
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -30,40 +29,73 @@
   </div>
   <div class="field">
     <%= f.label :Province %><br>
-    <%= f.text_field :Province %>
+    <%= select("order", "Province", options_for_select([['Ontario', 'Ontario'], ['Manitoba', 'Manitoba'], ['Saskatchewan','Saskatchewan'],['Quebec','Quebec']])) %>
+  
   </div>
   <div class="field">
-    <%= f.label :Size %><br>
-    <%= f.text_field :Size %>
-  </div>
-  <div class="field">
-   <%= f.label :VegToppings %><br>
-   <%= f.text_field :VegToppings %>
-   </div>
-  <div class="field">
-     <%= f.label :NonVeggieToppings %><br>
-     <input name="order[validated]" type="hidden" value="0" />
-   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
-   <%= f.label :Pepproni %><br>
-     <input name="order[validated]" type="hidden" value="0" />
-   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
-   <%= f.label :Mushrooms %><br>
-     <input name="order[validated]" type="hidden" value="0" />
-   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
-   <%= f.label :Onions %><br>
-   <input name="order[validated]" type="hidden" value="0" />
-   <input  type="checkbox" id="order_validated" name="order[validated]" value="1" />
-   <%= f.label :Hotpeppers %><br>
+    <%= f.radio_button("Size", "Small", :value => "Small") %>
+    <%= label_tag(:Size, "Small") %>
+    
+    <%= f.radio_button("Size", "Medium", :value => "Medium") %>
+    <%= label_tag(:Size, "Medium") %>
+    
+    <%= f.radio_button("Size", "Large", :value => "Large") %>
+    <%= label_tag(:Size, "Large") %>
+    
+    <%= f.radio_button("Size", "X-Large", :value => "X-Large") %>
+    <%= label_tag(:Size, "X-Large") %>
+</div>
 
-  </div>
+  <div class="field">
+   <%= f.label :VEGTOPPINGS%><br>
+    <%= label_tag 'vegtoppings_onions', 'Onions' %>
+    <%= check_box_tag 'order[VegToppings][]', 'Onions', checked('Onions'), id: 'vegtoppings_onions' %>
+    
+    <%= label_tag 'vegtoppings_pineapple', 'Pineapple' %>
+    <%= check_box_tag 'order[VegToppings][]', 'Pineapple', checked('Pineapple'), id: 'vegtoppings_pineapple' %>
+    
+    <%= label_tag 'vegtoppings_capsicum', 'Capsicum' %>
+    <%= check_box_tag 'order[VegToppings][]', 'Capsicum', checked('Capsicum'), id: 'vegtoppings_capsicum ' %>
+    
+    <%= label_tag 'vegtoppings_mushroom', 'Mushroom' %>
+    <%= check_box_tag 'order[VegToppings][]', 'Mushroom', checked('Mushroom'), id: 'vegtoppings_mushroom ' %>
+    
+    <%= label_tag 'vegtoppings_greenolives', 'GreenOlives' %>
+    <%= check_box_tag 'order[VegToppings][]', 'GreenOlives', checked('GreenOlives'), id: 'vegtoppings_greenolives ' %>
+    
+    <%= label_tag 'vegtoppings_blackpeppers', 'BlackPeppers' %>
+    <%= check_box_tag 'order[VegToppings][]', 'BlackPeppers', checked('BlackPeppers'), id: 'vegtoppings_blackpeppers ' %>
+   </div>
+   
+  <div class="field">
+      <%= f.label :NONVEGTOPPINGS%><br>
+    <%= label_tag 'nonvegtoppings_pepproni', 'Pepproni' %>
+    <%= check_box_tag 'order[NonVegToppings][]', 'Pepproni', checked('Pepproni'), id: 'nonvegtoppings_pepproni' %>
+    
+    <%= label_tag 'nonvegtoppings_sausage', 'Sausage' %>
+    <%= check_box_tag 'order[NonVegToppings][]', 'Sausage', checked('Sausage'), id: 'nonvegtoppings_sausage' %>
+    
+    <%= label_tag 'nonvegtoppings_beaf', 'Beaf' %>
+    <%= check_box_tag 'order[NonVegToppings][]', 'Beaf', checked('Beaf'), id: 'nonvegtoppings_beaf ' %>
+    
+    <%= label_tag 'nonvegtoppings_ham', 'Ham' %>
+    <%= check_box_tag 'order[NonVegToppings][]', 'Ham', checked('Ham'), id: 'nonvegtoppings_ham' %>
+    
+    <%= label_tag 'nonvegtoppings_bacon', 'Bacon' %>
+    <%= check_box_tag 'order[NonVegToppings][]', 'Bacon', checked('Bacon'), id: 'nonvegtoppings_bacon ' %>
+    
+ </div>
+ 
   <div class="field">
     <%= f.label :Crust %><br>
-    <%= f.text_field :Crust %>
+    <%= f.radio_button("Crust", "Original Hand Tossed") %>
+    <%= label_tag(:crust, "Original Hand Tossed") %>
+    
+    <%= f.radio_button("Crust", "Stuffed Crust") %>
+    <%= label_tag(:crust, "Stuffed Crust") %>
+    
   </div>
-  <div class="field">
-    <%= f.label :Price %><br>
-    <%= f.text_field :Price %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
